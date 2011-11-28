@@ -17,5 +17,10 @@ int main()
     polo.ajouter(&tutu);
     polo.afficher();
 
+    cout << endl;
+
+    polo.supprimer(0);
+    polo.afficher();
+
     return 0;
 }
