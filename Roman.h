@@ -11,22 +11,19 @@ class Roman : public Livre
 {
     public:
         // Constructeur
-        Roman(string titre, string auteur, string editeur, string nationalite, string traducteur = "");
+        Roman(string titre, string auteur, string editeur, string type);
 
         // Destructeur
         virtual ~Roman();
 
         // Méthodes
-        string get_nationalite();
-        void set_nationalite(string val);
-        string get_traducteur();
-        void set_traducteur(string val);
+        string getType();
+        void setType(string val);
 
-        virtual void afficher();
+        virtual string afficher();
     protected:
-        string _nationalite;
-        string _traducteur;
     private:
+        string _type;
 };
 
 #endif // ROMAN_H

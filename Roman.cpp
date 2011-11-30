@@ -1,8 +1,8 @@
 #include "Roman.h"
 
 // Constructeur
-Roman::Roman(string titre, string auteur, string editeur, string nationalite, string traducteur)
-    : Livre(titre, auteur, editeur), _nationalite(nationalite), _traducteur(traducteur)
+Roman::Roman(string titre, string auteur, string editeur, string type)
+    : Livre(titre, auteur, editeur), _type(type)
 {
 
 }
@@ -14,27 +14,17 @@ Roman::~Roman()
 }
 
 // Méthodes
-string Roman::get_nationalite()
+string Roman::getType()
 {
-    return this->_nationalite;
+    return this->_type;
 }
 
-void Roman::set_nationalite(string val)
+void Roman::setType(string val)
 {
-    this->_nationalite = val;
+    this->_type = val;
 }
 
-string Roman::get_traducteur()
+string Roman::afficher()
 {
-    return this->_traducteur;
-}
-
-void Roman::set_traducteur(string val)
-{
-    this->_traducteur = val;
-}
-
-void Roman::afficher()
-{
-    cout << this->_titre << ", " << this->_auteur << ", " << this->_editeur << ", " << this->_nationalite << ", " << this->_traducteur << endl;
+    return this->Livre::afficher() + ", " + this->_type;
 }

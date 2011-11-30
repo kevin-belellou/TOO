@@ -17,13 +17,13 @@ class BD : public Livre
         virtual ~BD();
 
         // Méthodes
-        string get_dessinateur();
-        void set_dessinateur(string val);
+        string getDessinateur();
+        void setDessinateur(string val);
 
-        virtual void afficher();
+        virtual string afficher();
     protected:
-        string _dessinateur;
     private:
+        string _dessinateur;
 };
 
 #endif // BD_H

@@ -14,17 +14,17 @@ BD::~BD()
 }
 
 // Méthodes
-string BD::get_dessinateur()
+string BD::getDessinateur()
 {
     return this->_dessinateur;
 }
 
-void BD::set_dessinateur(string val)
+void BD::setDessinateur(string val)
 {
     this->_dessinateur = val;
 }
 
-void BD::afficher()
+string BD::afficher()
 {
-    cout << this->_titre << ", " << this->_auteur << ", " << this->_editeur << ", " << this->_dessinateur << endl;
+    return this->Livre::afficher() + ", " + this->_dessinateur;
 }

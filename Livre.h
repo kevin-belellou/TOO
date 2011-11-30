@@ -17,19 +17,13 @@ class Livre : public Document
         virtual ~Livre();
 
         // Méthodes
-        string get_titre();
-        void set_titre(string val);
-        string get_auteur();
-        void set_auteur(string val);
-        string get_editeur();
-        void set_editeur(string val);
+        string getEditeur();
+        void setEditeur(string val);
 
-        virtual void afficher();
+        virtual string afficher();
     protected:
-        string _titre;
-        string _auteur;
-        string _editeur;
     private:
+        string _editeur;
 };
 
 #endif // LIVRE_H
