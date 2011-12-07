@@ -20,7 +20,7 @@ class Bibliotheque
         void supprimer(Document* doc);
         void afficher() const;
 
-        // Méthodes en test
+        // Méthodes en test (ne pas prendre en compte)
         Bibliotheque trier(string param, int sens);
     protected:
     private:

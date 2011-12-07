@@ -44,6 +44,7 @@ void Bibliotheque::afficher() const
             cout << i << " : " << _bibli[i]->afficher() << endl;
 }
 
+// NE PAS PRENDRE EN COMPTE, TEST EN COURS
 Bibliotheque Bibliotheque::trier(string param, int sens)
 {
     Bibliotheque res;
