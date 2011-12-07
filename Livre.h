@@ -1,11 +1,7 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 
-#include <iostream>
-#include <string>
 #include "Document.h"
-
-using namespace std;
 
 class Livre : public Document
 {

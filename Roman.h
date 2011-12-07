@@ -1,11 +1,7 @@
 #ifndef ROMAN_H
 #define ROMAN_H
 
-#include <iostream>
-#include <string>
 #include "Livre.h"
-
-using namespace std;
 
 class Roman : public Livre
 {

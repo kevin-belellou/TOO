@@ -1,7 +1,8 @@
 #ifndef DOCUMENT_H
 #define DOCUMENT_H
 
-#include <iostream>
+#include <string>
+#include <typeinfo>
 using namespace std;
 
 class Document

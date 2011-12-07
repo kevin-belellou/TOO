@@ -1,11 +1,7 @@
 #ifndef BD_H
 #define BD_H
 
-#include <iostream>
-#include <string>
 #include "Livre.h"
-
-using namespace std;
 
 class BD : public Livre
 {
