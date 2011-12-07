@@ -21,7 +21,7 @@ int main()
 
     cout << endl;
 
-    polo.supprimer(1);
+    polo.supprimer(&tutu);
     polo.afficher();
 
     return 0;

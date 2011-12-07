@@ -17,7 +17,7 @@ class Bibliotheque
 
         // Méthodes
         void ajouter(Document* doc);
-        void supprimer(int i);
+        void supprimer(Document* doc);
         void afficher();
     protected:
     private:
