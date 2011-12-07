@@ -15,7 +15,7 @@ Bibliotheque::~Bibliotheque()
 // Méthodes
 void Bibliotheque::ajouter(Document* doc)
 {
-    for (int i(0); i < this->_bibli.size(); i++)
+    for (unsigned int i(0); i < this->_bibli.size(); i++)
         if (this->_bibli[i] == doc)
         {
             cout << "Ce document est deja dans la bibliotheque !" <<endl;
@@ -26,10 +26,10 @@ void Bibliotheque::ajouter(Document* doc)
 
 void Bibliotheque::supprimer(Document* doc)
 {
-    for (int i(0); i < this->_bibli.size(); i++)
+    for (unsigned int i(0); i < this->_bibli.size(); i++)
         if (this->_bibli[i] == doc)
         {
-            for (int j(i + 1); j < this->_bibli.size(); j++)
+            for (unsigned int j(i + 1); j < this->_bibli.size(); j++)
                 this->_bibli[j - 1] = this->_bibli[j];
             this->_bibli.pop_back();
             return;
@@ -37,9 +37,15 @@ void Bibliotheque::supprimer(Document* doc)
     cout << "Ce document n'est pas dans la bibliotheque !" <<endl;
 }
 
-void Bibliotheque::afficher()
+void Bibliotheque::afficher() const
 {
     if (this->_bibli.size() != 0)
-        for (int i(0); i < this->_bibli.size(); i++)
+        for (unsigned int i(0); i < this->_bibli.size(); i++)
             cout << i << " : " << _bibli[i]->afficher() << endl;
+}
+
+Bibliotheque Bibliotheque::trier(string param, int sens)
+{
+    Bibliotheque res;
+    return res;
 }

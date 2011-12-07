@@ -13,10 +13,10 @@ class Roman : public Livre
         virtual ~Roman();
 
         // Méthodes
-        string getType();
+        string getType() const;
         void setType(string val);
 
-        virtual string afficher();
+        virtual string afficher() const;
     protected:
     private:
         string _type;

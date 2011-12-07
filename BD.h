@@ -13,10 +13,10 @@ class BD : public Livre
         virtual ~BD();
 
         // Méthodes
-        string getDessinateur();
+        string getDessinateur() const;
         void setDessinateur(string val);
 
-        virtual string afficher();
+        virtual string afficher() const;
     protected:
     private:
         string _dessinateur;

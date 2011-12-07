@@ -13,10 +13,10 @@ class Livre : public Document
         virtual ~Livre();
 
         // Méthodes
-        string getEditeur();
+        string getEditeur() const;
         void setEditeur(string val);
 
-        virtual string afficher();
+        virtual string afficher() const;
     protected:
     private:
         string _editeur;

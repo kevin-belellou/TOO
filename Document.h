@@ -3,6 +3,7 @@
 
 #include <string>
 #include <typeinfo>
+
 using namespace std;
 
 class Document
@@ -15,12 +16,12 @@ class Document
         virtual ~Document() = 0;
 
         // Méthode
-        string getTitre();
+        string getTitre() const;
         void setTitre(string val);
-        string getAuteur();
+        string getAuteur() const;
         void setAuteur(string val);
 
-        virtual string afficher();
+        virtual string afficher() const;
     protected:
     private:
         string _titre;
