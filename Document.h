@@ -9,7 +9,7 @@ using namespace std;
 class Document
 {
     public:
-        // Constructeur
+        // Constructeur polo
         Document(string titre, string auteur);
 
         // Destructeur (virtuel pur)
