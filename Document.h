@@ -9,13 +9,13 @@ using namespace std;
 class Document
 {
     public:
-        // Constructeur polo
+        // Constructeur
         Document(string titre, string auteur);
 
         // Destructeur (virtuel pur)
         virtual ~Document() = 0;
 
-        // Méthode
+        // Mï¿½thode
         string getTitre() const;
         void setTitre(string val);
         string getAuteur() const;
