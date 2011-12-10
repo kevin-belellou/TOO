@@ -14,7 +14,7 @@ Document::~Document()
 }
 
 // Méthode
-string Document::getTitre() const
+string Document::getTitre()
 {
     return this->_titre;
 }
@@ -24,7 +24,7 @@ void Document::setTitre(string val)
     this->_titre = val;
 }
 
-string Document::getAuteur() const
+string Document::getAuteur()
 {
     return this->_auteur;
 }
@@ -34,7 +34,7 @@ void Document::setAuteur(string val)
     this->_auteur = val;
 }
 
-string Document::afficher() const
+string Document::afficher()
 {
     return this->_titre + ", " + this->_auteur;
 }

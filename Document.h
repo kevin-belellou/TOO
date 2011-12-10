@@ -1,9 +1,7 @@
 #ifndef DOCUMENT_H
 #define DOCUMENT_H
 
-#include <string>
-#include <typeinfo>
-
+#include <iostream>
 using namespace std;
 
 class Document
@@ -15,13 +13,12 @@ class Document
         // Destructeur (virtuel pur)
         virtual ~Document() = 0;
 
-        // Mï¿½thode
-        string getTitre() const;
+        // Méthode
+        string getTitre();
         void setTitre(string val);
-        string getAuteur() const;
+        string getAuteur();
         void setAuteur(string val);
-
-        virtual string afficher() const;
+        virtual string afficher();
     protected:
     private:
         string _titre;

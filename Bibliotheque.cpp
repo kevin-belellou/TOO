@@ -15,7 +15,7 @@ Bibliotheque::~Bibliotheque()
 // Méthodes
 void Bibliotheque::ajouter(Document* doc)
 {
-    for (unsigned int i(0); i < this->_bibli.size(); i++)
+    for (int i(0); i < this->_bibli.size(); i++)
         if (this->_bibli[i] == doc)
         {
             cout << "Ce document est deja dans la bibliotheque !" <<endl;
@@ -26,10 +26,10 @@ void Bibliotheque::ajouter(Document* doc)
 
 void Bibliotheque::supprimer(Document* doc)
 {
-    for (unsigned int i(0); i < this->_bibli.size(); i++)
+    for (int i(0); i < this->_bibli.size(); i++)
         if (this->_bibli[i] == doc)
         {
-            for (unsigned int j(i + 1); j < this->_bibli.size(); j++)
+            for (int j(i + 1); j < this->_bibli.size(); j++)
                 this->_bibli[j - 1] = this->_bibli[j];
             this->_bibli.pop_back();
             return;
@@ -37,16 +37,86 @@ void Bibliotheque::supprimer(Document* doc)
     cout << "Ce document n'est pas dans la bibliotheque !" <<endl;
 }
 
-void Bibliotheque::afficher() const
+void Bibliotheque::afficher()
 {
     if (this->_bibli.size() != 0)
-        for (unsigned int i(0); i < this->_bibli.size(); i++)
+        for (int i(0); i < this->_bibli.size(); i++)
             cout << i << " : " << _bibli[i]->afficher() << endl;
 }
 
-// NE PAS PRENDRE EN COMPTE, TEST EN COURS
-Bibliotheque Bibliotheque::trier(string param, int sens)
+
+void Bibliotheque::recherche(string pSearch)
 {
-    Bibliotheque res;
-    return res;
+	bool trouve=false;
+	int i=0;
+	while ( (!trouve) && (i<=_bibli.size()) )
+	{
+		if(_bibli[i]->getTitre()==pSearch)
+		{
+			trouve=true;
+			cout<<"Votre Document existe dans la Bibliootheque, il est à la place " <<i <<" :"<<endl;
+			cout<<"- "<<_bibli[i]->afficher()<<endl;
+		}
+		else i++;
+	}
+	
+	if(!trouve)
+	{
+		cout<<"Votre document n'est pas dans la Bibliotheque"<<endl;
+	}
+
+}
+
+
+void Bibliotheque::tri(string pTri)
+{
+	bool tab_en_ordre = false;
+	bool deja_tri = true;
+	
+    if(pTri=="titre")
+    {
+		int taille = _bibli.size();
+		while(!tab_en_ordre)
+		{
+		    tab_en_ordre = true;
+		    for(int i=0 ; i < taille-1 ; i++)
+		    {
+		        if(_bibli[i]->getTitre() > _bibli[i+1]->getTitre())
+		        {
+		            swap(_bibli[i],_bibli[i+1]);
+		            tab_en_ordre = false;
+		            deja_tri = false;
+		        }
+		    }
+		    taille--;
+		}
+
+	}
+	else if (pTri=="auteur")
+	{
+		int taille = _bibli.size();
+		while(!tab_en_ordre)
+		{
+		    tab_en_ordre = true;
+		    for(int i=0 ; i < taille-1 ; i++)
+		    {
+		        if(_bibli[i]->getAuteur() > _bibli[i+1]->getAuteur())
+		        {
+		            swap(_bibli[i],_bibli[i+1]);
+		            tab_en_ordre = false;
+		            deja_tri = false;
+		        }
+		    }
+		    taille--;
+		}
+
+	}
+	else cout<<"Votre choix de tri n'est pas valide, merci de choisir soit 'auteur' ou 'titre'. "<<endl;
+			
+	if (deja_tri==false)
+	{
+		cout<<"Votre Bibliotheque à été Trié."<<endl;
+	}
+	else cout<<"Votre Bibliotheque est déja Trié"<<endl;
+	
 }

@@ -14,7 +14,7 @@ Livre::~Livre()
 }
 
 // Méthodes
-string Livre::getEditeur() const
+string Livre::getEditeur()
 {
     return this->_editeur;
 }
@@ -24,7 +24,7 @@ void Livre::setEditeur(string val)
     this->_editeur = val;
 }
 
-string Livre::afficher() const
+string Livre::afficher()
 {
     return this->Document::afficher() + ", " + this->_editeur;
 }

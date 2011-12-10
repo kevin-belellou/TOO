@@ -18,10 +18,10 @@ class Bibliotheque
         // Méthodes
         void ajouter(Document* doc);
         void supprimer(Document* doc);
-        void afficher() const;
+        void afficher();
+        void recherche(string pSearch);
+        void tri(string pTri);
 
-        // Méthodes en test (ne pas prendre en compte)
-        Bibliotheque trier(string param, int sens);
     protected:
     private:
         vector<Document*> _bibli;

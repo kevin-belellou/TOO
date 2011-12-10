@@ -1,7 +1,11 @@
 #ifndef LIVRE_H
 #define LIVRE_H
 
+#include <iostream>
+#include <string>
 #include "Document.h"
+
+using namespace std;
 
 class Livre : public Document
 {
@@ -13,10 +17,10 @@ class Livre : public Document
         virtual ~Livre();
 
         // Méthodes
-        string getEditeur() const;
+        string getEditeur();
         void setEditeur(string val);
 
-        virtual string afficher() const;
+        virtual string afficher();
     protected:
     private:
         string _editeur;

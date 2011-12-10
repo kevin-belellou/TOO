@@ -14,7 +14,7 @@ BD::~BD()
 }
 
 // Méthodes
-string BD::getDessinateur() const
+string BD::getDessinateur()
 {
     return this->_dessinateur;
 }
@@ -24,7 +24,7 @@ void BD::setDessinateur(string val)
     this->_dessinateur = val;
 }
 
-string BD::afficher() const
+string BD::afficher()
 {
     return this->Livre::afficher() + ", " + this->_dessinateur;
 }
