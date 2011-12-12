@@ -1,11 +1,7 @@
 #ifndef BD_H
 #define BD_H
 
-#include <iostream>
-#include <string>
 #include "Livre.h"
-
-using namespace std;
 
 class BD : public Livre
 {
@@ -17,10 +13,10 @@ class BD : public Livre
         virtual ~BD();
 
         // Méthodes
-        string getDessinateur();
+        string getDessinateur() const;
         void setDessinateur(string val);
 
-        virtual string afficher();
+        virtual string afficher() const;
     protected:
     private:
         string _dessinateur;

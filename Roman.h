@@ -1,11 +1,7 @@
 #ifndef ROMAN_H
 #define ROMAN_H
 
-#include <iostream>
-#include <string>
 #include "Livre.h"
-
-using namespace std;
 
 class Roman : public Livre
 {
@@ -17,10 +13,10 @@ class Roman : public Livre
         virtual ~Roman();
 
         // Méthodes
-        string getType();
+        string getType() const;
         void setType(string val);
 
-        virtual string afficher();
+        virtual string afficher() const;
     protected:
     private:
         string _type;

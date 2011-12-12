@@ -14,7 +14,7 @@ Roman::~Roman()
 }
 
 // Méthodes
-string Roman::getType()
+string Roman::getType() const
 {
     return this->_type;
 }
@@ -24,7 +24,7 @@ void Roman::setType(string val)
     this->_type = val;
 }
 
-string Roman::afficher()
+string Roman::afficher() const
 {
     return this->Livre::afficher() + ", " + this->_type;
 }
