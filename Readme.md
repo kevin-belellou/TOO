@@ -8,5 +8,5 @@ Groupe de B&eacute;lellou K&eacute;vin et Carrere Charly
 Pr&eacute;sentation
 ------------
 
-Cr&eacute;ation d'un système de bibliothèque
+Cr&eacute;ation d'un syst&egrave;me de biblioth&egrave;que
 Utilisation de C++
