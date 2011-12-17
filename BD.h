@@ -26,6 +26,7 @@ class BD : public Livre
 
         /**
          * Getteur de Dessinateur
+         * @return _dessinateur
          */
         string getDessinateur() const;
         
