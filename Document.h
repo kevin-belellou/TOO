@@ -7,21 +7,52 @@
 
 using namespace std;
 
+/**
+ * Classe abstraite Document
+ */
 class Document
 {
     public:
-        // Constructeur
+        /**
+         * Constructeur surchargé
+         * @param titre string
+         * @param auteur string
+         */
         Document(string titre, string auteur);
 
-        // Destructeur (virtuel pur)
+        /**
+         * Destructeur virtuel pure
+         */
         virtual ~Document() = 0;
 
-        // M�thode
+        /**
+         * Getteur de titre
+         * @return _titre
+         */
         string getTitre() const;
+        
+        /**
+         * Setteur de Titre
+         * @param val string
+         */
         void setTitre(string val);
+        
+        /**
+         * Getteur de Auteur
+         * @return _auteur
+         */
         string getAuteur() const;
+        
+        /**
+         * Setteur d'Auteur
+         * @param val
+         */
         void setAuteur(string val);
 
+        /**
+         * Méthode permettant d'afficher l'objet de type Document
+         * @return string
+         */
         virtual string afficher() const;
     protected:
     private:
