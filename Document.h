@@ -21,7 +21,7 @@ class Document
         Document(string titre, string auteur);
 
         /**
-         * Destructeur virtuel pure
+         * Destructeur virtuel pur
          */
         virtual ~Document() = 0;
 
@@ -30,19 +30,19 @@ class Document
          * @return _titre
          */
         string getTitre() const;
-        
+
         /**
          * Setteur de Titre
          * @param val string
          */
         void setTitre(string val);
-        
+
         /**
          * Getteur de Auteur
          * @return _auteur
          */
         string getAuteur() const;
-        
+
         /**
          * Setteur d'Auteur
          * @param val
