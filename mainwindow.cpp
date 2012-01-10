@@ -36,3 +36,8 @@ void MainWindow::on_pushButton_clicked()
     polo.show();
     polo.exec();
 }
+
+void MainWindow::on_boutonTri_clicked()
+{
+    bibli.tri(ui->choixTri->currentText().toStdString());
+}

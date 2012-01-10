@@ -28,7 +28,7 @@
      </rect>
     </property>
     <attribute name="horizontalHeaderVisible">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <attribute name="horizontalHeaderHighlightSections">
      <bool>true</bool>
@@ -40,7 +40,7 @@
      <bool>false</bool>
     </attribute>
     <attribute name="horizontalHeaderVisible">
-     <bool>true</bool>
+     <bool>false</bool>
     </attribute>
     <attribute name="horizontalHeaderHighlightSections">
      <bool>true</bool>
@@ -97,6 +97,39 @@
     </property>
     <property name="text">
      <string>Ajouter un document</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="choixTri">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>78</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>titre</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>auteur</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="boutonTri">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>270</y>
+      <width>92</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trier</string>
     </property>
    </widget>
   </widget>

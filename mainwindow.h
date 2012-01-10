@@ -23,6 +23,7 @@ private:
     Ui::MainWindow *ui;
 
 private slots:
+    void on_boutonTri_clicked();
     void on_pushButton_clicked();
     void on_actionQuitter_triggered();
 };
