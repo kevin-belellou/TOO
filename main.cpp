@@ -19,7 +19,7 @@ int main()
     polo.ajouter(&tutu);
     polo.ajouter(&titi);
     polo.ajouter(&tete);
-    //polo.afficher();
+    polo.afficher();
     
     
     cout<<endl;
@@ -27,14 +27,12 @@ int main()
   	polo.recherche("Le symbole perdu");
   	cout<<endl;
   	polo.afficher();
-  	//polo.tri("titre");
 
     cout << endl;
-	//polo.tri("erreurtri");
-    polo.supprimer(&toto);
-    //polo.tri("auteur");
+
+    polo.supprimer(&tete);
     polo.afficher();
-    //polo.recherche("Le symbole perdu");
+    polo.recherche("Le symbole perdu");
 
     return 0;
 }

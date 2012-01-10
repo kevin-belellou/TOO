@@ -20,32 +20,29 @@ On ajoute dans le vecteur ainsi que dans le fichier "Bibli.txt" qui sert de Base
 */
 void Bibliotheque::ajouter(Document* doc)
 {
-<<<<<<< HEAD
-    for (unsigned int i(0); i < this->_bibli.size(); i++)
-        if (this->_bibli[i] == doc)
-        {
-            cout << "Ce document est deja dans la bibliotheque !" << endl;
-            return;
-        }
-        this->_bibli.push_back(doc);
-=======
 
-		for (unsigned int i(0); i < this->_bibli.size(); i++)
+	unsigned int i = 0;
+	bool trouve = false;
+	
+		while ((!trouve) && (i < this->_bibli.size()) )
+	{
+		//Si on trouve on arrête de chercher et on affiche.
+		if(this->_bibli[i] == doc)
+
 		{
-            if (this->_bibli[i] == doc)
-		    {
-		        cout << "Ce document est deja dans la bibliotheque !" <<endl;
-		        return;
-		    }	    
+			trouve = true;
+			cout << "Votre Document existe déja dans la Bibliotheque."<< endl;
 		}
-		
-		this->_bibli.push_back(doc);
-<<<<<<< HEAD
-		doc->ajout();	// On fait appel à la fonction ajout en utilisant le polymorphisme, permettant d'ajouter dans la BDD
-=======
+		else
+            i++;
+	}
+	if (!trouve)
+	{
+    	this->_bibli.push_back(doc);
 		doc->ajout();	
->>>>>>> 9386edaf9609855f6e5b90e09d67df965971aa38
->>>>>>> 5d859e513ac7c3e3e4cd6dc1c8e3784e522527f1
+		// On fait appel à la fonction ajout en utilisant le polymorphisme, permettant d'ajouter dans la BDD
+	}
+
 }
 
 
@@ -54,21 +51,30 @@ Cette méthode recherche et supprime le document envoyé en paramètre. Elle le sup
 */
 void Bibliotheque::supprimer(Document* doc)
 {
-    for (unsigned int i(0); i < this->_bibli.size(); i++)
-    {
-       if (this->_bibli[i] == doc)
-        {
-            for (unsigned int j(i + 1); j < this->_bibli.size(); j++)
-                this->_bibli[j - 1] = this->_bibli[j];
-            this->_bibli.pop_back();
-            break;
-        }
-<<<<<<< HEAD
-    cout << "Ce document n'est pas dans la bibliotheque !" << endl;
-=======
-    	else 
-    		cout << "Ce document n'est pas dans la bibliotheque !" <<endl;
-    }
+
+	unsigned int i = 0;
+	bool trouve = false;
+	
+	while ((!trouve) && (i < this->_bibli.size()) )
+	{
+	//Si on trouve on arrête de chercher et on affiche.
+		if(this->_bibli[i] == doc)
+		{
+			trouve = true;
+			for (unsigned int j(i + 1); j < this->_bibli.size(); j++)
+			{
+	            this->_bibli[j - 1] = this->_bibli[j];
+	        }
+	        this->_bibli.pop_back();
+		}
+		else
+	        i++;
+	}
+	if (!trouve)
+	{
+		cout << "Ce document n'est pas dans la bibliotheque." <<endl;
+		
+	}
     
 
 	//On Ouvre le fichier en effaçant le contenu, et on le ferme.
@@ -86,7 +92,7 @@ void Bibliotheque::supprimer(Document* doc)
        this->_bibli[u]->ajout();
 	}
 	   
->>>>>>> 9386edaf9609855f6e5b90e09d67df965971aa38
+
 }
 
 /*
@@ -129,21 +135,16 @@ Nul besoin de chercher dans le fichier, puisqu'il est à jour par rapport au vect
 */
 void Bibliotheque::recherche(string pSearch) const
 {
-<<<<<<< HEAD
-	bool trouve=false;
-	unsigned int i=0;
-	while ( (!trouve) && (i<=_bibli.size()) ) //Oncherche tant que le fichier n'est pas trouvé, ou qu'on ai parcouru tout le vecteur.
-	{
-		//Si on trouve on arrête de chercher et on affiche.
-		if(_bibli[i]->getTitre()==pSearch)
-=======
+
 	bool trouve = false;
 	unsigned int i = 0;
-
+	
+	//Oncherche tant que le fichier n'est pas trouvé, ou qu'on ai parcouru tout le vecteur.
 	while ((!trouve) && (i <= this->_bibli.size()) )
 	{
+		//Si on trouve on arrête de chercher et on affiche.
 		if(this->_bibli[i]->getTitre() == pSearch)
->>>>>>> 5d859e513ac7c3e3e4cd6dc1c8e3784e522527f1
+
 		{
 			trouve = true;
 			cout << "Votre Document existe dans la Bibliotheque, il est a la place " << i << " :" << endl;
@@ -207,17 +208,11 @@ void Bibliotheque::tri(string pTri)
 	}
 	else cout << "Votre choix de tri n'est pas valide, merci de choisir soit 'auteur' ou 'titre'. " << endl;
 
-<<<<<<< HEAD
+
 	if (deja_tri == false)
 		cout << "Votre Bibliotheque a ete triee." << endl;
 	else
         cout << "Votre Bibliotheque est deja triee" << endl;
-=======
-	if (deja_tri==false)
-	{
-		cout<<"Votre Bibliotheque à été Trié."<<endl;
-	}
-	else cout<<"Votre Bibliotheque est déja Trié"<<endl;
 	
 	
 	ofstream fichier("Bibli.txt", ios::out | ios::trunc);
@@ -232,5 +227,4 @@ void Bibliotheque::tri(string pTri)
 	{
        this->_bibli[u]->ajout();
 	}
->>>>>>> 9386edaf9609855f6e5b90e09d67df965971aa38
 }

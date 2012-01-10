@@ -34,7 +34,7 @@ void BD::ajout() const
 	ofstream fichier("Bibli.txt", ios::out | ios::app);
     if(fichier)  // si l'ouverture a réussi
     {
-    fichier<<this->_auteur<<" "<<this->_titre<<" "<<this->_editeur<<" "<<this->_dessinateur<<endl;
+    fichier<<this->_auteur<<", "<<this->_titre<<", "<<this->_editeur<<", "<<this->_dessinateur<<endl;
     fichier.close();  // on referme le fichier
     }
     else

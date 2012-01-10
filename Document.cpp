@@ -45,7 +45,7 @@ void Document::ajout() const
     if(fichier)  // si l'ouverture a réussi
     {
     
-    fichier<<this->_auteur<<" "<<this->_titre<<endl;
+    fichier<<this->_auteur<<", "<<this->_titre<<endl;
     fichier.close();  // on referme le fichier
     }
     else
