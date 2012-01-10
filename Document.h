@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 //#include <typeinfo> // EN TEST
 
 using namespace std;
@@ -54,8 +55,9 @@ class Document
          * @return string
          */
         virtual string afficher() const;
+        
+        virtual void ajout() const;
     protected:
-    private:
         string _titre;
         string _auteur;
 };

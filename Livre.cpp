@@ -28,3 +28,15 @@ string Livre::afficher() const
 {
     return this->Document::afficher() + ", " + this->_editeur;
 }
+
+void Livre::ajout() const
+{
+	ofstream fichier("Bibli.txt", ios::out | ios::app);
+    if(fichier)  // si l'ouverture a réussi
+    {
+    fichier<<this->_auteur<<" "<<this->_titre<<" "<<this->_editeur<<endl;
+    fichier.close();  // on referme le fichier
+    }
+    else
+     cerr << "Erreur à l'ouverture !" << endl;
+}

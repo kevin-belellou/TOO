@@ -13,35 +13,77 @@ Bibliotheque::~Bibliotheque()
 }
 
 // Méthodes
+
 void Bibliotheque::ajouter(Document* doc)
 {
-    for (unsigned int i(0); i < this->_bibli.size(); i++)
-        if (this->_bibli[i] == doc)
-        {
-            cout << "Ce document est deja dans la bibliotheque !" <<endl;
-            return;
-        }
-        this->_bibli.push_back(doc);
+
+		for (unsigned int i(0); i < this->_bibli.size(); i++)
+		{
+            if (this->_bibli[i] == doc)
+		    {
+		        cout << "Ce document est deja dans la bibliotheque !" <<endl;
+		        return;
+		    }	    
+		}
+		
+		this->_bibli.push_back(doc);
+		doc->ajout();	
 }
 
 void Bibliotheque::supprimer(Document* doc)
 {
     for (unsigned int i(0); i < this->_bibli.size(); i++)
-        if (this->_bibli[i] == doc)
+    {
+       if (this->_bibli[i] == doc)
         {
             for (unsigned int j(i + 1); j < this->_bibli.size(); j++)
                 this->_bibli[j - 1] = this->_bibli[j];
             this->_bibli.pop_back();
-            return;
+            break;
         }
-    cout << "Ce document n'est pas dans la bibliotheque !" <<endl;
+    	else 
+    		cout << "Ce document n'est pas dans la bibliotheque !" <<endl;
+    }
+    
+
+
+    ofstream fichier("Bibli.txt", ios::out | ios::trunc);
+   	if(fichier)  // si l'ouverture a réussi
+   	{     
+   	fichier.close();  // on referme le fichier
+    }
+    else
+     cerr << "Erreur à l'ouverture !" << endl;
+	
+	for (unsigned int u(0); u < this->_bibli.size(); u++)
+	{
+       this->_bibli[u]->ajout();
+	}
+	   
 }
 
+/*
 void Bibliotheque::afficher() const
 {
     if (this->_bibli.size() != 0)
         for (unsigned int i(0); i < this->_bibli.size(); i++)
             cout << i << " : " << _bibli[i]->afficher() << endl;
+}
+*/
+void Bibliotheque::afficher() const
+{
+	ifstream fichier("Bibli.txt", ios::in);
+    if(fichier)  // si l'ouverture a réussi
+    {
+		string ligne;
+		while(getline(fichier, ligne))
+        {
+                cout << ligne << endl;
+        }     
+     	fichier.close();  // on referme le fichier
+    }
+    else
+     cerr << "Erreur à l'ouverture !" << endl;
 }
 
 
@@ -117,4 +159,18 @@ void Bibliotheque::tri(string pTri)
 		cout<<"Votre Bibliotheque à été Trié."<<endl;
 	}
 	else cout<<"Votre Bibliotheque est déja Trié"<<endl;
+	
+	
+	ofstream fichier("Bibli.txt", ios::out | ios::trunc);
+   	if(fichier)  // si l'ouverture a réussi
+   	{     
+   	fichier.close();  // on referme le fichier
+    }
+    else
+     cerr << "Erreur à l'ouverture !" << endl;
+	
+	for (unsigned int u(0); u < this->_bibli.size(); u++)
+	{
+       this->_bibli[u]->ajout();
+	}
 }
