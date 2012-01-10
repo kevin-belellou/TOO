@@ -4,6 +4,8 @@
 #include <vector>
 #include "Roman.h"
 #include "BD.h"
+#include <fstream>
+#include <typeinfo>
 
 
 /**
