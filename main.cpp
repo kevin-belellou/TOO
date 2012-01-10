@@ -12,7 +12,7 @@ int main()
 	Roman titi("Les Fourmis", "Bernard Werber", "Albin Michel", "Policier");
     Roman tete("Le symbole perdu", "Dan Brown", "France Loisirs", "Aventure");
     Roman tata("Le rire du Cyclope", "Bernard Werber", "France Loisirs", "Policier");
-    BD tutu("Tintin", "Herge", "Flammarion", "Aventure");
+    BD tutu("Tintin", "Herge", "Herge", "Aventure");
 
 
     polo.ajouter(&toto);

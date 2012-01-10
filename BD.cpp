@@ -24,13 +24,21 @@ void BD::setDessinateur(string val)
     this->_dessinateur = val;
 }
 
+/*
+La méthode afficher est polymorphe, on appel donc la méthode de la classe parente et on ajoute ce que l'on veut afficher en plus.
+*/
 string BD::afficher() const
 {
     return this->Livre::afficher() + ", " + this->_dessinateur;
 }
 
+/*
+Le but de cette méthode est d'ajouter le document dans la BDD. Pour cela on ouvre le fichier en écriture,
+et on écrit les attributs de la classe. Une fois terminé on ferme le fichier.
+*/
 void BD::ajout() const
 {
+	//On ouvre le fichier en écriture
 	ofstream fichier("Bibli.txt", ios::out | ios::app);
     if(fichier)  // si l'ouverture a réussi
     {

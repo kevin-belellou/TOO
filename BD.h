@@ -40,6 +40,10 @@ class BD : public Livre
          * méthode permettant d'afficher l'objet BD
          */
         virtual string afficher() const;
+        
+        /**
+         * Méthode permettant d'ajouter l'objet dans la BDD
+         */
         virtual void ajout() const;
     protected:
         string _dessinateur;

@@ -40,6 +40,10 @@ class Roman : public Livre
          * @return string
          */
         virtual string afficher() const;
+        
+        /**
+         * Méthode permettant d'ajouter l'objet dans la BDD
+         */  
         virtual void ajout() const;
     private:
         string _type;

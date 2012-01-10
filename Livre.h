@@ -34,6 +34,10 @@ class Livre : public Document
          * @return string
          */
         virtual string afficher() const;
+        
+        /**
+         * Méthode permettant d'ajouter l'objet dans la BDD
+         */  
         virtual void ajout() const;
     protected:
         string _editeur;

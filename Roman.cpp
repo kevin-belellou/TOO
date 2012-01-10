@@ -24,6 +24,9 @@ void Roman::setType(string val)
     this->_type = val;
 }
 
+/*
+La méthode afficher est polymorphe, on appel donc la méthode de la classe parente et on ajoute ce que l'on veut afficher en plus.
+*/
 string Roman::afficher() const
 {
     return this->Livre::afficher() + ", " + this->_type;
@@ -31,6 +34,7 @@ string Roman::afficher() const
 
 void Roman::ajout() const
 {
+	//On ouvre le fichier en écriture
 	ofstream fichier("Bibli.txt", ios::out | ios::app);
     if(fichier)  // si l'ouverture a réussi
     {

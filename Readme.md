@@ -10,3 +10,5 @@ Pr&eacute;sentation
 
 Cr&eacute;ation d'un syst&egrave;me de biblioth&egrave;que  
 Utilisation de C++  
+L'examen fut tr&egrave;s compliqu&eacute;, si vous pensez qu'on peut m&eacute;riter une note sympathique, surtout, n'h&eacute;sitez pas :D.  
+Bon courage pour les corections.  
