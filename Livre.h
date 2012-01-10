@@ -10,7 +10,7 @@ class Livre : public Document
 {
     public:
         /**
-         * Constructeur sur chargé de Livre
+         * Constructeur surchargé de Livre
          * @param titre string
          * @param auteur string
          * @param editeur string

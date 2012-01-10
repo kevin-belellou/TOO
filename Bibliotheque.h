@@ -8,9 +8,9 @@
 #include <typeinfo>
 
 
-        /**
-         * Classe Bibliotheque qui va permettre de stocker les objets de types Document
-         */
+/**
+ * Classe Bibliotheque qui va permettre de stocker les objets de types Document
+ */
 class Bibliotheque
 {
     public:
@@ -30,24 +30,24 @@ class Bibliotheque
          * @param doc pointeur de type Document
          */
         void ajouter(Document* doc);
-        
+
         /**
          * Méthode permettant de supprimer un Document de la Bibiotheque
          * @param doc pointeur de type Document
          */
         void supprimer(Document* doc);
-        
+
         /**
          * Méthode permettant d'afficher la Bibliotheque
          */
         void afficher() const;
-        
+
         /**
          * Méthode permettant de rechercher un document dans la bibliotheque
          * @param pSearch string
          */
         void recherche(string pSearch) const;
-        
+
         /**
          * Méthode permettant de trier le tableau (soit par titre, soit par auteur).
          * @param pTri string
