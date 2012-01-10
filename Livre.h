@@ -34,8 +34,8 @@ class Livre : public Document
          * @return string
          */
         virtual string afficher() const;
+        virtual void ajout() const;
     protected:
-    private:
         string _editeur;
 };
 

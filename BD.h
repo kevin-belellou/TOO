@@ -40,8 +40,8 @@ class BD : public Livre
          * méthode permettant d'afficher l'objet BD
          */
         virtual string afficher() const;
+        virtual void ajout() const;
     protected:
-    private:
         string _dessinateur;
 };
 

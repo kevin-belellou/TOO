@@ -40,7 +40,7 @@ class Roman : public Livre
          * @return string
          */
         virtual string afficher() const;
-    protected:
+        virtual void ajout() const;
     private:
         string _type;
 };
